@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(230, 225, 225);
+}
+#nav{
+    display: flex;
+    justify-content:space-evenly;
+    /* align-items: center; */
+    background-color:blueviolet;
+    margin-bottom: 40px;
+    
+}
+#nav>div{
+    margin: 20px;
+   
+}
+a{
+   font-size: 50px;
+    text-decoration: none;
+    color: white;
+}
+h1{
+    text-align: center;
+}

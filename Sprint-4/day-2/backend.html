@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #investorInfo{
+            width: 50%;
+            margin:auto;
+            background-color: white;
+            padding: 10px;
+        }
+        input{
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div><a href="backend.html">Backend</a></div>
+        <div><a href="frontend.html" target="_blank">Frontend</a></div>
+    </div>
+    <h1>Welcome to Backend-Page</h1>
+    <form action="" id="investorInfo">
+        <input id="investorName" type="text" placeholder="Enter Name">
+        <input id="investorImgURL" type="text" placeholder="Enter image URL">
+        <input id="investorCompanyLogo" type="text" placeholder="Enter company Logo URL">
+        <input id="investorRole" type="text" placeholder="Enter Role in Company">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
+<script>
+    var infoArr = JSON.parse(localStorage.getItem("investorsInfo")) || [];
+
+    document.querySelector("#investorInfo").addEventListener("submit",function(){
+        event.preventDefault();
+        var infoObj = {
+        name:investorInfo.investorName.value,
+        imgurl:investorInfo.investorImgURL.value,
+        logourl:investorInfo.investorCompanyLogo.value,
+        role:investorInfo.investorRole.value
+            }
+        
+        infoArr.push(infoObj);
+        console.log(infoArr)
+
+        localStorage.setItem("investorsInfo",JSON.stringify(infoArr));
+    });
+    
+</script>
